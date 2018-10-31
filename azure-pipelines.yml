@@ -21,16 +21,16 @@ steps:
     
 - task: CopyFiles@2
   inputs:
-    contents: '**/build/libs/*.war'
+    contents: '**/helloworld*.jar'
     targetFolder: '$(build.artifactStagingDirectory)'
 
 - task: PublishBuildArtifacts@1
   inputs:
-    artifactName: 'wars'
+    artifactName: 'jarfiles'
     pathToPublish: '$(build.artifactStagingDirectory)'
 
 - task: AzureRmWebAppDeployment@3
   inputs:
     azureSubscription: 'devops'
     WebAppName: 'azuredevopscora'
-    Package: '$(build.artifactStagingDirectory)/*.war'
+    Package: '$(build.artifactStagingDirectory)/*.jar'
