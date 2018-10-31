@@ -16,7 +16,7 @@ steps:
     jdkVersionOption: '1.8'
     jdkArchitectureOption: 'x64'
     publishJUnitResults: false
-    testResultsFiles: '**/TEST-*.xml'
+    testResultsFiles: '**/*.xml'
     tasks: 'build'
     
 steps:
