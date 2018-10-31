@@ -28,3 +28,9 @@ steps:
   inputs:
     artifactName: 'wars'
     pathToPublish: '$(build.artifactStagingDirectory)'
+
+- task: AzureRmWebAppDeployment@3
+  inputs:
+    azureSubscription: 'devops'
+    WebAppName: 'azuredevopscora'
+    Package: '$(build.artifactStagingDirectory)/*.war'
