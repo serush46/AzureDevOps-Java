@@ -32,5 +32,5 @@ steps:
 - task: AzureRmWebAppDeployment@3
   inputs:
     azureSubscription: 'devops'
-    WebAppName: 'azuredevopscora'
+    WebAppName: 'azurecorasdevops'
     Package: '$(build.artifactStagingDirectory)/*.jar'
